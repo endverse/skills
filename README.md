@@ -12,20 +12,21 @@ SKILL.md convention (Claude Code, Cursor, Codex CLI, OpenCode, Hermes, …).
 |---|---|---|
 | [magazine-briefing](skills/content/magazine-briefing/) | content | Render structured JSON into a retro editorial magazine-style HTML page |
 | [feishu-card-push](skills/messaging/feishu-card-push/) | messaging | Send a Feishu (Lark) Card 2.0 with cover, text blocks and a link button |
+| [github-pages-publish](skills/devops/github-pages-publish/) | devops | Publish local files to an existing GitHub Pages repo and verify the live page |
+| [daily-brief](skills/workflows/daily-brief/) | workflows | Generate & push a daily AI/infra briefing by composing the three skills above |
 
 ## Layout
 
 ```
 skills/
 ├── content/
-│   └── magazine-briefing/
-│       ├── SKILL.md
-│       ├── scripts/render.py
-│       └── templates/example-brief.json
-└── messaging/
-    └── feishu-card-push/
-        ├── SKILL.md
-        └── scripts/send_card.py
+│   └── magazine-briefing/        # JSON → magazine-style HTML
+├── messaging/
+│   └── feishu-card-push/         # → Feishu Card 2.0
+├── devops/
+│   └── github-pages-publish/     # publish to GitHub Pages (+ SETUP.md, one-time)
+└── workflows/
+    └── daily-brief/              # composition skill: fetch/summarize + the 3 above
 ```
 
 Skills are grouped by domain (`content/`, `messaging/`, …). The set is
