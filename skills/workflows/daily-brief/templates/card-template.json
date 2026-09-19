@@ -1,0 +1,19 @@
+{
+  "_comment": "锁定的早报卡片模板。每天只替换占位符：{date}(如 2026年09月19日 · 星期六)、{issue}(如 001)、{highlight}(🔥今日重点正文)、{glance}(今日看点多行)、{count_line}(共N条统计)、{page_url}(当天页面)、{cover}(封面图绝对路径)。结构/顺序/标题/图标/模板色一律不改。",
+  "chat_id": "oc_bf5fe15d7eef9babda1d709cc085f641",
+  "header": {
+    "title": "📰 AI & 基础设施早报",
+    "subtitle": "{date} · 第{issue}期",
+    "template": "indigo",
+    "icon": "myai_colorful"
+  },
+  "cover_image": "{cover}",
+  "blocks": [
+    {"type": "markdown", "content": "**🔥 今日重点**\n{highlight}"},
+    {"type": "hr"},
+    {"type": "markdown", "content": "**今日看点**\n{glance}"},
+    {"type": "grey", "content": "{count_line}"}
+  ],
+  "button": {"text": "📖 阅读今日早报全文", "url": "{page_url}"},
+  "footer": "由 daily-brief 自动生成"
+}

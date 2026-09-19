@@ -59,10 +59,12 @@ def build_card(spec, image_key=None):
         els.append({"tag":"hr"})
         els.append({"tag":"markdown","content":f"<font color='grey'>{spec['footer']}</font>"})
     h = spec.get("header", {})
+    # Defaults are locked so a hand-written spec can never lose the template
+    # colour or the header icon (the coloured circle before the title).
     header = {"template": h.get("template","indigo"),
               "title":{"tag":"plain_text","content":h.get("title","")}}
     if h.get("subtitle"): header["subtitle"]={"tag":"plain_text","content":h["subtitle"]}
-    if h.get("icon"): header["icon"]={"tag":"standard_icon","token":h["icon"]}
+    header["icon"]={"tag":"standard_icon","token":h.get("icon","myai_colorful")}
     return {"schema":"2.0","config":{"wide_screen_mode":True},"header":header,
             "body":{"elements":els}}
 

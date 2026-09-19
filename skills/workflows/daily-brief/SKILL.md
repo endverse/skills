@@ -51,7 +51,13 @@ Install those three alongside this skill. Invoke each at its step below.
 4. **Render** (→ magazine-briefing): `python3 <magazine-briefing>/scripts/render.py briefing.json YYYY-MM-DD.html`.
 5. **Publish** (→ github-pages-publish): `publish.py --repo-dir <repo> --pages-url <url> --files YYYY-MM-DD.html index.html --message "Publish YYYY-MM-DD"`.
 6. **Commit dedup state**: `python3 scripts/dedup_history.py commit briefing.json` (updates seen.json).
-7. **Push card** (→ feishu-card-push): build a spec.json (cover + 🔥重点 + 今日看点 + button→page URL), `python3 <feishu-card-push>/scripts/send_card.py spec.json`.
+7. **Push card** (→ feishu-card-push): **do NOT hand-write the card**. Copy
+   `templates/card-template.json` and fill ONLY the placeholders — `{date}`,
+   `{issue}`, `{highlight}`, `{glance}`, `{count_line}`, `{page_url}`,
+   `{cover}` — leaving title / icon / template colour / block order untouched.
+   Then `python3 <feishu-card-push>/scripts/send_card.py spec.json`. The locked
+   template guarantees a consistent card every day (title 📰 AI & 基础设施早报,
+   the myai_colorful circle icon, indigo header, footer 由 daily-brief 自动生成).
 
 ## Summary Standard (摘要铁律)
 
