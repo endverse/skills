@@ -30,7 +30,7 @@ render.py — 把结构化 JSON 渲染成复古编辑部杂志风的独立 HTML�
 
 用法: python3 render.py brief.json output.html
 """
-import json, html, sys
+import json, html, sys, os
 
 STYLE = """  :root{
     --ink:#15130f; --paper:#e9e2d6; --red:#d7382f; --sub:#6d6459;
@@ -182,5 +182,10 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         sys.exit("用法: python3 render.py brief.json output.html")
     data = json.load(open(sys.argv[1]))
-    open(sys.argv[2], "w").write(render(data))
-    print(f"已渲染 {sys.argv[2]}")
+    out = sys.argv[2]
+    # 自动创建输出文件的父目录（支持 2026/2026-09-20.html 这类年份归档路径）
+    parent = os.path.dirname(out)
+    if parent:
+        os.makedirs(parent, exist_ok=True)
+    open(out, "w").write(render(data))
+    print(f"已渲染 {out}")

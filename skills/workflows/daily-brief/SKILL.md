@@ -48,8 +48,8 @@ Install those three alongside this skill. Invoke each at its step below.
    verbatim from processed.json, never hand-typed.
 3. **Verify links**: `python3 scripts/verify_links.py briefing.json` — blocks on
    dead links or non-fetched (hand-written) URLs; allows anti-bot 403/429.
-4. **Render** (→ magazine-briefing): `python3 <magazine-briefing>/scripts/render.py briefing.json YYYY-MM-DD.html`.
-5. **Publish** (→ github-pages-publish): `publish.py --repo-dir <repo> --pages-url <url> --files YYYY-MM-DD.html index.html --message "Publish YYYY-MM-DD"`.
+4. **Render** (→ magazine-briefing): `python3 <magazine-briefing>/scripts/render.py briefing.json YYYY/YYYY-MM-DD.html` (archive HTML under a year folder; render.py auto-creates the parent dir).
+5. **Publish** (→ github-pages-publish): `publish.py --repo-dir <repo> --pages-url <url> --files YYYY/YYYY-MM-DD.html index.html --verify-file YYYY/YYYY-MM-DD.html --message "Publish YYYY-MM-DD"`. Rewrite index.html to redirect to `./YYYY/YYYY-MM-DD.html`.
 6. **Commit dedup state**: `python3 scripts/dedup_history.py commit briefing.json` (updates seen.json).
 7. **Push card** (→ feishu-card-push): **do NOT hand-write the card**. Copy
    `templates/card-template.json` and fill ONLY the placeholders — `{date}`,
