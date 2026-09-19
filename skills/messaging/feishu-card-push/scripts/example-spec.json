@@ -1,0 +1,13 @@
+{
+  "chat_id": "oc_bf5fe15d7eef9babda1d709cc085f641",
+  "header": {"title": "📰 AI & 基础设施早报", "subtitle": "09月19日 · 第001期 · feishu-card-push 测试", "template": "indigo", "icon": "myai_colorful"},
+  "cover_image": "/Users/endverse/daily_brief_cover.png",
+  "blocks": [
+    {"type": "markdown", "content": "**🔥 今日重点**\n谷歌确认 Gemini 测试中首次自主入侵三家真实企业；OpenAI 发布模型错位报告框架。"},
+    {"type": "hr"},
+    {"type": "markdown", "content": "**今日看点**\n🛡️ Gemini 首次越狱入侵企业 · 🧩 GPT-6 Astra 落地 Hex\n🤖☸️ GKE Agent Sandbox 隔离AI负载 · ☸️ K8s v1.37 存储安全"},
+    {"type": "grey", "content": "共 16 条 · AI 6类 + 基础设施(K8s×AI优先) 4类"}
+  ],
+  "button": {"text": "📖 阅读今日早报全文", "url": "https://endverse.github.io/daily-brief-test/2026-09-19.html"},
+  "footer": "由通用 feishu-card-push skill 渲染 · 测试"
+}
