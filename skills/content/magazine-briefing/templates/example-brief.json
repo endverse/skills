@@ -1,0 +1,26 @@
+{
+  "brand": "示例周报",
+  "date_label": "2026 年 09 月 19 日 · 星期六",
+  "issue": 1,
+  "kicker": "WEEKLY",
+  "lead": "这是一个演示 magazine-briefing 通用渲染器的示例：品牌名、板块、条目全部由 JSON 决定。",
+  "footer": "由 magazine-briefing 渲染 · 示例",
+  "highlights": [
+    {"title":"重点事件标题","url":"https://example.com/top","summary":"重点事件的两三句客观摘要。","note":"次级要点：补充关键事实。"}
+  ],
+  "sections": [
+    {
+      "label": "📁 板块一",
+      "categories": [
+        {"emoji":"🧩","title":"分类 A","en":"Category A","items":[
+          {"title":"条目一标题","url":"https://example.com/1","summary":"条目一的摘要。","tag":"标签","source":"来源"},
+          {"title":"开源项目条目","url":"https://github.com/x/y","summary":"开源项目摘要。","tag":"框架","source":"GitHub","oss":true}
+        ]}
+      ]
+    }
+  ],
+  "flash": [
+    {"title":"一句话快讯 A","url":"https://example.com/a"},
+    {"title":"一句话快讯 B","url":"https://example.com/b"}
+  ]
+}
